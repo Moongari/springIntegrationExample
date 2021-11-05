@@ -3,7 +3,7 @@
 
 Presentation de spring integration.
 
-
+https://docs.spring.io/spring-integration/docs/2.1.0.RC1/reference/htmlsingle/images/router.jpg
 
 
 
