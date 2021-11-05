@@ -16,13 +16,10 @@ Comment utiliser Spring integration
 **language:** Java 11 , intellij or Eclipse, Maven
 
 
-## Dependances a integrer dans le pom.xml
+## Dependances a integrer 
+
 Spring Web
 Spring integration
-
-
-
-
 
 
 
