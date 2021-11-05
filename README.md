@@ -18,8 +18,8 @@ Comment utiliser Spring integration
 
 ## Dependances a integrer 
 
-Spring Web
-Spring integration
+**Dependance:** Spring Web
+**Dependance:** Spring integration
 
 
 
