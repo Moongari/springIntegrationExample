@@ -1,15 +1,18 @@
 package com.moon.springintregration.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.moon.springintregration.model.Address;
 import com.moon.springintregration.model.Student;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.IntegrationComponentScan;
+import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.annotation.Transformer;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.json.JsonToObjectTransformer;
 import org.springframework.integration.json.ObjectToJsonTransformer;
+import org.springframework.integration.router.PayloadTypeRouter;
 import org.springframework.integration.support.json.Jackson2JsonObjectMapper;
 import org.springframework.messaging.MessageChannel;
 
@@ -49,5 +52,12 @@ public class IntegrationConfig {
     }
 
 
+    @ServiceActivator(inputChannel = "router.channel")
+    @Bean
+    public PayloadTypeRouter router(){
+        PayloadTypeRouter router = new PayloadTypeRouter();
+        router.setChannelMapping(Address.class.getName(),"address.channel");
+        return router;
+    }
 
 }
